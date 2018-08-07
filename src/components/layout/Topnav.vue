@@ -2,7 +2,7 @@
   <div class="top-nav-wrapper">
     <v-toolbar app light>
       <v-toolbar-side-icon @click.native.stop="drawer = !drawer" v-if="sidenav === 'true'"></v-toolbar-side-icon>
-      <v-toolbar-title @click="clickTopMenu('Welcome')">{{storeName}}</v-toolbar-title>
+      <v-toolbar-title @click="clickTopMenu('welcome')">{{getTopNavTitle}}</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <template v-for="menu in visibleMenuItem">
@@ -36,22 +36,22 @@ export default {
     topMenus: [
       {
         title: 'Homepage',
-        name: 'Basic',
+        name: 'home',
         visibleLogin: true,
         visibleLogout: false
       }, {
         icon: 'more_vert',
         title: 'userMenus',
-        name: 'User',
+        name: 'user',
         visibleLogin: true,
         visibleLogout: false,
         items: [
           {
             title: 'Change Password',
-            name: 'ChangePassword'
+            name: 'change-password'
           }, {
             title: 'Logout',
-            name: 'Logout'
+            name: 'logout'
           }
         ]
       }
@@ -60,7 +60,8 @@ export default {
   computed: {
     ...mapGetters ({
       userRealName: 'getRealName',
-      storeName: 'getStoreName'
+      storeName: 'getStoreName',
+      appName: 'getAppName'
     }),
 
     drawer: {
@@ -80,12 +81,18 @@ export default {
         : this.topMenus.filter(item => {
           return item.visibleLogout;
         });
+    },
+
+    getTopNavTitle () {
+      return (this.isLogin === 'true') ? this.storeName : this.appName;
     }
   },
   methods: {
     clickTopMenu (menu) {
-      if (menu === 'Login') {
-        this.$store.commit('toggleShowLoginForm');
+      if (menu === 'logout') {
+        this.$router.push({
+          name: 'welcome'
+        });
       } else {
         this.$store.commit('setActiveMenuItem', menu);
         this.$router.push({
