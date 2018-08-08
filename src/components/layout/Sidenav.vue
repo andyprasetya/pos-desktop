@@ -31,14 +31,14 @@
           no-action>
           <v-list-tile slot="activator">
             <v-list-tile-action class="pr-1 pl-2 mr-1">
-              <v-icon :class="isActiveParentMenu(item.name) ? 'blue--text' : ''" :title="item.title"  dark v-html="item.icon"></v-icon>
+              <v-icon :class="isActiveParentMenu(item.name) ? 'orange--text' : ''" :title="item.title"  dark v-html="item.icon"></v-icon>
             </v-list-tile-action>
-            <v-list-tile-content :class="isActiveParentMenu(item.name)?'blue--text': ''">
+            <v-list-tile-content :class="isActiveParentMenu(item.name)?'orange--text': ''">
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
           <v-list-tile v-for="subItem in item.items" :key="subItem.name" @click="clickMenu(subItem)">
-            <v-list-tile-content :class="isActiveMenuItem(subItem.name)?'blue--text': ''">
+            <v-list-tile-content :class="isActiveMenuItem(subItem.name)?'orange--text': ''">
               <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -49,9 +49,9 @@
           :key="item.name"
           @click="clickMenu(item)">
           <v-list-tile-action class="pr-1 pl-2 mr-1">
-            <v-icon :class="isActiveMenuItem(item.name)?'blue--text': ''" :title="item.title"  dark v-html="item.icon"></v-icon>
+            <v-icon :class="isActiveMenuItem(item.name)?'orange--text': ''" :title="item.title"  dark v-html="item.icon"></v-icon>
           </v-list-tile-action>
-          <v-list-tile-content :class="isActiveMenuItem(item.name)?'blue--text': ''">
+          <v-list-tile-content :class="isActiveMenuItem(item.name)?'orange--text': ''">
             <v-list-tile-title v-text="item.title"></v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>

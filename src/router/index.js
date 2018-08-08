@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+import Layout from '@/components/layout/Layout';
 import Welcome from '@/components/pages/Welcome';
 import Home from '@/components/pages/Home';
 import Penjualan from '@/components/pages/Penjualan';
@@ -16,21 +17,31 @@ export default new Router({
       name: 'welcome',
       component: Welcome
     }, {
-      path: '/home',
-      name: 'home',
-      component: Home
-    }, {
-      path: '/penjualan',
-      name: 'penjualan',
-      components: { content: Penjualan }
-    }, {
-      path: '/pembelian',
-      name: 'pembelian',
-      component: Pembelian
-    }, {
-      path: '/pemindahan',
-      name: 'pemindahan',
-      component: Pemindahan
+      path: '/pos',
+      component: Layout,
+      children: [
+        {
+          path: 'penjualan',
+          name: 'penjualan',
+          component: Penjualan,
+          alias: '/penjualan'
+        }, {
+          path: 'pembelian',
+          name: 'pembelian',
+          component: Pembelian,
+          alias: '/pembelian'
+        }, {
+          path: 'pemindahan',
+          name: 'pemindahan',
+          component: Pemindahan,
+          alias: '/pemindahan'
+        }, {
+          // Default children
+          path: '',
+          name: 'home',
+          component: Home
+        }
+      ]
     }
   ]
 });

@@ -1,7 +1,9 @@
 <template lang="html">
-  <v-flex xs12>
-    Penjualan
-  </v-flex>
+  <v-layout row wrap>
+    <v-flex>
+      penjualan
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
