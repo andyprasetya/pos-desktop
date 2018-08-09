@@ -70,27 +70,27 @@ export default {
     return {
       items: [
         {
-          icon: 'local_activity',
+          icon: 'add_shopping_cart',
           title: 'Penjualan',
           name: 'penjualan'
         },
         {
-          icon: 'school',
+          icon: 'assignment_return',
           title: 'Pembelian',
           name: 'pembelian'
         },
         {
-          icon: 'directions_run',
+          icon: 'swap_horiz',
           title: 'Pemindahan',
           name: 'pemindahan'
         },
         {
-          icon: 'healing',
+          icon: 'alarm_add',
           title: 'Transaksi Lainnya',
           name: 'transaksi-lainnya'
         },
         {
-          icon: 'content_cut',
+          icon: 'assessment',
           title: 'Laporan',
           name: 'laporan',
           items: [
@@ -100,7 +100,7 @@ export default {
           ]
         },
         {
-          icon: 'local_offer',
+          icon: 'settings',
           title: 'Konfigurasi',
           name: 'konfigurasi'
         }
