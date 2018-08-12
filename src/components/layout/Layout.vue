@@ -5,9 +5,7 @@
     <topnav is-login="true" sidenav="true"></topnav>
 
     <v-content>
-      <v-container fluid fill-height>
-        <router-view></router-view>
-      </v-container>
+      <router-view></router-view>
     </v-content>
 
   </v-app>

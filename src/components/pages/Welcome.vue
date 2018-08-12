@@ -60,8 +60,7 @@ export default {
   },
   methods: {
     handleSubmitLogin () {
-      console.log(this.email, this.password);
-
+      // console.log(this.email, this.password);
       this.$router.push({
         name: 'home'
       });
