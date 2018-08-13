@@ -374,9 +374,6 @@ export default {
           "borderThickness": 1,
           "shadowAlpha": 0
         },
-        "export": {
-         "enabled": true
-        },
         "dataProvider": this.chartData
       });
     }
