@@ -12,12 +12,6 @@
 </template>
 
 <script>
-/*
- * Landing page dengan sidenav, komponennya:
- * - Topnav dengan nama aplikasi di kiri, menu di kanan + logout
- * - Konten statistik, grafik dan tabel
- * - Sidenav
- */
 import Topnav from '@/components/layout/Topnav';
 import Sidenav from '@/components/layout/Sidenav';
 
